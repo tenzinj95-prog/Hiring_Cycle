@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SCE Cycle Hire - Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-card">
+
+        <div class="login-logo">
+            🚲
+        </div>
+
+        <h1>
+            SCE Cycle Hire
+        </h1>
+
+        <p>
+            Administrator Dashboard
+        </p>
+
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Admin password"
+        >
+
+
+        <button
+            onclick="login()"
+        >
+            Login
+        </button>
+
+
+        <a href="index.html">
+            ← Back to booking
+        </a>
+
+    </div>
+
+</div>
+
+
+<div
+    id="dashboard"
+    class="dashboard hidden"
+>
+
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div>
+                🚲
+            </div>
+
+            <section>
+
+                <strong>
+                    SCE Cycle Hire
+                </strong>
+
+                <small>
+                    Admin
+                </small>
+
+            </section>
+
+        </div>
+
+
+        <nav>
+
+            <button
+                class="active"
+                onclick="showDashboard()"
+            >
+                📊 Dashboard
+            </button>
+
+            <button
+                onclick="showBookings()"
+            >
+                📋 Bookings
+            </button>
+
+            <a href="index.html">
+                🚲 Student Form
+            </a>
+
+        </nav>
+
+
+        <button
+            class="logout"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+    <main class="main-content">
+
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Manage your cycle bookings.
+                </p>
+
+            </div>
+
+            <button
+                class="refresh-button"
+                onclick="loadAll()"
+            >
+                ↻ Refresh
+            </button>
+
+        </header>
+
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <span>
+                    TOTAL BOOKINGS
+                </span>
+
+                <strong id="totalBookings">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    TODAY
+                </span>
+
+                <strong id="todayBookings">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    ACTIVE HIRE
+                </span>
+
+                <strong id="ongoingBookings">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    EARNINGS
+                </span>
+
+                <strong id="earnings">
+                    Nu. 0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <section class="cycle-status-card">
+
+            <div class="big-cycle">
+                🚲
+            </div>
+
+            <div>
+
+                <span>
+                    CYCLE STATUS
+                </span>
+
+                <h2 id="adminCycleStatus">
+                    Available
+                </h2>
+
+                <p>
+                    SCE Cycle 01
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="booking-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Recent Bookings
+                    </h2>
+
+                    <p>
+                        Manage student rental requests.
+                    </p>
+
+                </div>
+
+
+                <input
+                    type="search"
+                    id="searchBox"
+                    placeholder="Search bookings..."
+                    oninput="filterBookings()"
+                >
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Booking
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Hours
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="bookingTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+>
+</div>
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

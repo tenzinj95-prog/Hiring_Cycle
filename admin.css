@@ -1,0 +1,710 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --background: #f5f7ff;
+    --white: #ffffff;
+    --text: #172033;
+    --muted: #697386;
+    --border: #e2e5ef;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #d97706;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* LOGIN */
+
+.login-screen {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.login-card {
+    width: min(400px, 100%);
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(30, 41, 59, 0.1);
+
+    text-align: center;
+}
+
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    background: #eef2ff;
+}
+
+
+.login-card h1 {
+    font-size: 25px;
+}
+
+
+.login-card p {
+    color: var(--muted);
+
+    margin: 8px 0 25px;
+}
+
+
+.login-card input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    margin-bottom: 12px;
+
+    font: inherit;
+}
+
+
+.login-card button {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.login-card a {
+    display: block;
+
+    margin-top: 20px;
+
+    text-decoration: none;
+
+    color: var(--primary);
+
+    font-size: 13px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: flex;
+
+    min-height: 100vh;
+}
+
+
+.sidebar {
+    width: 250px;
+
+    background: #171b35;
+
+    color: white;
+
+    padding: 25px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.sidebar-brand {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 10px;
+
+    margin-bottom: 30px;
+}
+
+
+.sidebar-brand > div {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    background: #4f46e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.sidebar-brand strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.sidebar-brand small {
+    color: #a9b0c8;
+
+    font-size: 11px;
+}
+
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.sidebar nav button,
+.sidebar nav a {
+    border: none;
+
+    background: transparent;
+
+    color: #b9bfd5;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+
+.sidebar nav button:hover,
+.sidebar nav button.active,
+.sidebar nav a:hover {
+    background: #292e51;
+
+    color: white;
+}
+
+
+.logout {
+    margin-top: auto;
+
+    border: none;
+
+    background: #292e51;
+
+    color: #fff;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+.main-content {
+    flex: 1;
+
+    padding: 35px;
+
+    overflow-x: hidden;
+}
+
+
+.dashboard-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.dashboard-header h1 {
+    font-size: 30px;
+}
+
+
+.dashboard-header p {
+    color: var(--muted);
+
+    margin-top: 5px;
+}
+
+
+.refresh-button {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+
+/* STATS */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.stat-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 22px;
+}
+
+
+.stat-card span {
+    font-size: 10px;
+
+    color: var(--muted);
+
+    letter-spacing: 1px;
+
+    font-weight: 800;
+}
+
+
+.stat-card strong {
+    display: block;
+
+    font-size: 28px;
+
+    margin-top: 8px;
+
+    color: var(--primary);
+}
+
+
+/* CYCLE */
+
+.cycle-status-card {
+    margin-top: 20px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+
+.big-cycle {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 17px;
+
+    background: #eef2ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+
+.cycle-status-card span {
+    font-size: 10px;
+
+    color: var(--muted);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.cycle-status-card h2 {
+    color: var(--success);
+
+    margin: 4px 0;
+}
+
+
+.cycle-status-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* BOOKINGS */
+
+.booking-section {
+    margin-top: 25px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.section-header {
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.section-header h2 {
+    font-size: 19px;
+}
+
+
+.section-header p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+.section-header input {
+    width: 230px;
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+
+th {
+    text-align: left;
+
+    padding: 13px 18px;
+
+    background: #f8f9ff;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.7px;
+}
+
+
+td {
+    padding: 15px 18px;
+
+    border-top: 1px solid #edf0f5;
+
+    font-size: 13px;
+}
+
+
+.booking-id {
+    color: var(--primary);
+
+    font-weight: 800;
+}
+
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.status-pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.status-approved {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+.status-ongoing {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.status-returned {
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+
+.status-cancelled {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+.action-select {
+    padding: 7px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 12px;
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background: #171b35;
+
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 10px;
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    transition: 0.3s;
+
+    z-index: 50;
+}
+
+
+.toast.show {
+    transform: translateY(0);
+
+    opacity: 1;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 75px;
+
+        padding: 15px 8px;
+    }
+
+
+    .sidebar-brand section,
+    .sidebar nav a,
+    .sidebar nav button,
+    .logout {
+        font-size: 0;
+
+        text-align: center;
+    }
+
+
+    .sidebar nav button::first-letter,
+    .sidebar nav a::first-letter,
+    .logout::first-letter {
+        font-size: 18px;
+    }
+
+
+    .sidebar-brand {
+        justify-content: center;
+    }
+
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .dashboard-header {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+
+    .stat-card {
+        padding: 15px;
+    }
+
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+
+    .section-header {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .section-header input {
+        width: 100%;
+    }
+
+}

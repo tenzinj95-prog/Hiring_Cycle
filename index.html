@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SCE Cycle Hire - Student Cycle Rental System"
+    >
+
+    <meta
+        name="theme-color"
+        content="#4f46e5"
+    >
+
+    <title>SCE Cycle Hire</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🚲
+        </div>
+
+        <div>
+            <h1>SCE Cycle Hire</h1>
+
+            <span>
+                Samtse College of Education
+            </span>
+        </div>
+
+    </div>
+
+    <a
+        href="admin.html"
+        class="admin-link"
+    >
+        Admin
+    </a>
+
+</header>
+
+
+<main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                🚲 Student Cycle Rental
+            </span>
+
+            <h2>
+                Ride around campus
+                <br>
+                <strong>easily & affordably.</strong>
+            </h2>
+
+            <p>
+                Hire the SCE cycle for
+                <strong>Nu. 100 per hour.</strong>
+            </p>
+
+        </div>
+
+
+        <div class="cycle-card">
+
+            <div class="cycle-icon">
+                🚲
+            </div>
+
+            <div>
+
+                <span>
+                    CYCLE STATUS
+                </span>
+
+                <h3 id="cycleStatus">
+                    Available
+                </h3>
+
+                <small>
+                    One cycle available
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING FORM -->
+    <section class="form-section">
+
+        <div class="section-title">
+
+            <span class="number">
+                01
+            </span>
+
+            <div>
+
+                <h2>
+                    Book your cycle
+                </h2>
+
+                <p>
+                    Fill in your details below.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="bookingForm"
+            action="https://script.google.com/macros/s/AKfycbyXrCXOsVqgwcINVic74Zh6RFSqjb5Li2-jLNjRnuycgI1JsffPt99ntUs1LectWiMT/exec"
+            method="POST"
+            target="submitFrame"
+            autocomplete="on"
+        >
+
+            <!-- Tells Google Apps Script what operation to perform -->
+            <input
+                type="hidden"
+                name="action"
+                value="booking"
+            >
+
+            <!-- Temporary reference shown to the student -->
+            <input
+                type="hidden"
+                id="clientBookingId"
+                name="clientBookingId"
+                value=""
+            >
+
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label for="studentName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="studentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        placeholder="e.g. 23IT001"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="programme">
+                        Programme / Year
+                    </label>
+
+                    <input
+                        type="text"
+                        id="programme"
+                        name="programme"
+                        placeholder="e.g. B.Ed IT Year 3"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- HIRE DETAILS -->
+
+            <div class="section-title second">
+
+                <span class="number">
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Hire details
+                    </h2>
+
+                    <p>
+                        Choose when you need the cycle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field">
+
+                    <label for="hireDate">
+                        Hire Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="hireDate"
+                        name="hireDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="startTime">
+                        Start Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="startTime"
+                        name="startTime"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="hours">
+                        Number of Hours
+                    </label>
+
+                    <select
+                        id="hours"
+                        name="hours"
+                        required
+                    >
+
+                        <option value="">
+                            Select duration
+                        </option>
+
+                        <option value="1">
+                            1 hour
+                        </option>
+
+                        <option value="2">
+                            2 hours
+                        </option>
+
+                        <option value="3">
+                            3 hours
+                        </option>
+
+                        <option value="4">
+                            4 hours
+                        </option>
+
+                        <option value="5">
+                            5 hours
+                        </option>
+
+                        <option value="6">
+                            6 hours
+                        </option>
+
+                        <option value="7">
+                            7 hours
+                        </option>
+
+                        <option value="8">
+                            8 hours
+                        </option>
+
+                        <option value="9">
+                            9 hours
+                        </option>
+
+                        <option value="10">
+                            10 hours
+                        </option>
+
+                        <option value="11">
+                            11 hours
+                        </option>
+
+                        <option value="12">
+                            12 hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="pickup">
+                        Pickup Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pickup"
+                        name="pickup"
+                        placeholder="e.g. SCE Campus"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PURPOSE -->
+
+            <div class="field full">
+
+                <label for="purpose">
+                    Purpose
+                    <span>(Optional)</span>
+                </label>
+
+                <textarea
+                    id="purpose"
+                    name="purpose"
+                    placeholder="What will you use the cycle for?"
+                    rows="3"
+                ></textarea>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="price-box">
+
+                <div>
+
+                    <span>
+                        HOURLY RATE
+                    </span>
+
+                    <strong>
+                        Nu. 100
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        DURATION
+                    </span>
+
+                    <strong id="durationText">
+                        0 hours
+                    </strong>
+
+                </div>
+
+
+                <div class="total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="totalAmount">
+                        Nu. 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- AVAILABILITY -->
+
+            <div
+                id="availabilityMessage"
+                class="availability-message"
+            ></div>
+
+
+            <!-- AGREEMENT -->
+
+            <label class="agreement">
+
+                <input
+                    type="checkbox"
+                    id="agreement"
+                    required
+                >
+
+                <span>
+                    I agree to return the cycle on time
+                    and take responsibility for it during
+                    my rental period.
+                </span>
+
+            </label>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                id="submitButton"
+                class="submit-button"
+            >
+                🚲 Book Cycle
+            </button>
+
+
+            <p class="small-note">
+
+                Your booking will be reviewed before
+                the cycle is handed over.
+
+            </p>
+
+        </form>
+
+    </section>
+
+
+    <!-- SUCCESS -->
+
+    <section
+        id="successBox"
+        class="success-box hidden"
+    >
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            Booking Submitted!
+        </h2>
+
+        <p>
+            Your cycle booking has been submitted
+            successfully.
+        </p>
+
+
+        <div class="booking-result">
+
+            <span>
+                BOOKING ID
+            </span>
+
+            <strong id="bookingIdResult">
+                -
+            </strong>
+
+        </div>
+
+
+        <p>
+            Please keep your Booking ID for reference.
+        </p>
+
+
+        <button
+            type="button"
+            onclick="newBooking()"
+            class="secondary-button"
+        >
+            Make Another Booking
+        </button>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 SCE Cycle Hire
+    </p>
+
+    <p>
+        Student Cycle Rental • Nu.100/hour
+    </p>
+
+</footer>
+
+
+<!--
+    Hidden iframe used to submit the form
+    without leaving the GitHub Pages website.
+-->
+<iframe
+    name="submitFrame"
+    id="submitFrame"
+    class="hidden-frame"
+    title="Booking submission"
+></iframe>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
